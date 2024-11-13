@@ -2,8 +2,11 @@
 #include <stdint.h>
 #include <string.h>
 #include <string>
-#include "wfm.h"
+#include <vector>
 #include <iostream>
+#include <stdint.h>
+
+#include "wfm.h"
 
 using namespace std;
 
@@ -20,9 +23,12 @@ int main(int argc, char *argv[])
     }
 
     print_wfm_info(wfm);
-    print_curve_data(wfm);
     calculate_and_print_voltages(wfm);
+
+    write_wfm("test.wfm", wfm);
+
     unmap_wfm(wfm);
+
     return 0;
 }
 
